@@ -45,7 +45,6 @@
     docker-buildx
     # Kubernetes
     minikube
-    skaffold
     # Security
     gobuster
     john
@@ -55,7 +54,6 @@
     discord
     slack
     # Utility apps
-    keepassxc
     obsidian
     slides
     # Random shell stuff
@@ -98,7 +96,6 @@
     shellAliases = {
       k = "kubectl";
       tf = "terraform";
-      update = "home-manager switch";
     };
     plugins = [
       {
@@ -130,13 +127,6 @@
       rust-lang.rust-analyzer
       yzhang.markdown-all-in-one
       zhuangtongfa.material-theme
-    ];
-  };
-
-  programs.neovim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [
-      LazyVim
     ];
   };
 
