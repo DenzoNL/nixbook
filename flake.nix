@@ -61,6 +61,7 @@
     darwinConfigurations."svartalfheim" = nix-darwin.lib.darwinSystem {
       modules = [ 
 	      configuration
+        ./homebrew.nix
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
