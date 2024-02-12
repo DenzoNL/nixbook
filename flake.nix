@@ -51,6 +51,7 @@
       # Allow sudo using Touch ID
       security.pam.enableSudoTouchIdAuth = true;
 
+      # Explicitly configure home directory for home-manager
       users.users."d.bogers".home = "/Users/d.bogers";
     };
   in
@@ -59,7 +60,7 @@
     # $ darwin-rebuild build --flake .
     darwinConfigurations."svartalfheim" = nix-darwin.lib.darwinSystem {
       modules = [ 
-	configuration
+	      configuration
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
