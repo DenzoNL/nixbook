@@ -20,7 +20,6 @@
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
 
       # Allow the installation of unfree packages
       nixpkgs.config.allowUnfree = true;
@@ -36,7 +35,6 @@
 
       # Create /etc/zshrc that loads the nix-darwin environment.
       programs.zsh.enable = true;  # default shell on catalina
-      # programs.fish.enable = true;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -53,6 +51,14 @@
 
       # Explicitly configure home directory for home-manager
       users.users."d.bogers".home = "/Users/d.bogers";
+
+      # Always display hidden files.
+      system.defaults.NSGlobalDomain.AppleShowAllFiles = true;
+
+      # Add shell alias to rebuild this config.
+      environment.shellAliases = {
+        rebuild = "darwin-rebuild switch --flake /Users/d.bogers/nixbook";
+      };
     };
   in
   {
