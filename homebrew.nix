@@ -20,6 +20,7 @@
   homebrew.casks = [
     "flutter"
     "font-caskaydia-cove-nerd-font"
+    "hot"
     "insomnia"
     "plexamp"
     "warp"
