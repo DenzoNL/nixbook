@@ -24,4 +24,12 @@
     "plexamp"
     "warp"
   ];
+
+  # List of App Store apps to install
+  homebrew.masApps = {
+    Magnet = 441258766;
+    Tailscale = 1475387142;
+    "WhatsApp Messenger" = 310633997;
+    Xcode = 497799835;
+  };
 }
