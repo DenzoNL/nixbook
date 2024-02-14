@@ -2,35 +2,44 @@
 { ... }: 
 
 {
-  homebrew.enable = true;
+  homebrew = {
+    enable = true;
 
-  # List of Homebrew formula repositories to tap.
-  homebrew.taps = [
-    "homebrew/cask-fonts"
-  ];
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+      upgrade = true;
+    };
 
-  # List of Homebrew formulae to install.
-  homebrew.brews = [
-    "cocoapods"
-    "fastlane"
-    "ruby"
-  ];
+    taps = [
+      "homebrew/cask-fonts"
+    ];
 
-  # List of Homebrew casks to install.
-  homebrew.casks = [
-    "flutter"
-    "font-caskaydia-cove-nerd-font"
-    "hot"
-    "insomnia"
-    "plexamp"
-    "warp"
-  ];
+    brews = [
+      "cocoapods"
+      "fastlane"
+      "ruby"
+    ];
 
-  # List of App Store apps to install
-  homebrew.masApps = {
-    Magnet = 441258766;
-    Tailscale = 1475387142;
-    "WhatsApp Messenger" = 310633997;
-    Xcode = 497799835;
+    casks = [
+      "1password"
+      "firefox"
+      "flutter"
+      "font-caskaydia-cove-nerd-font"
+      "hot"
+      "insomnia"
+      "openvpn-connect"
+      "plexamp"
+      "raycast"
+      "scroll-reverser"
+      "warp"
+    ];
+
+    masApps = {
+      Magnet = 441258766;
+      Tailscale = 1475387142;
+      "WhatsApp Messenger" = 310633997;
+      Xcode = 497799835;
+    };
   };
 }
