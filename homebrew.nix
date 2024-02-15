@@ -32,12 +32,12 @@
       "plexamp"
       "raycast"
       "scroll-reverser"
+      "tailscale"
       "warp"
     ];
 
     masApps = {
       Magnet = 441258766;
-      Tailscale = 1475387142;
       "WhatsApp Messenger" = 310633997;
       Xcode = 497799835;
     };
