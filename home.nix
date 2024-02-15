@@ -32,7 +32,6 @@
     popeye
     # Development tools
     firebase-tools
-    gitkraken
     mariadb
     nodejs-18_x
     iterm2
@@ -43,8 +42,6 @@
     dive
     docker-client
     docker-buildx
-    # Kubernetes
-    minikube
     # Security
     gobuster
     john

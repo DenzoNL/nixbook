@@ -28,6 +28,7 @@
       "firefox"
       "flutter"
       "font-caskaydia-cove-nerd-font"
+      "gitkraken"
       "google-chrome"
       "hot"
       "insomnia"
