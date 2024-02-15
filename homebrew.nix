@@ -24,6 +24,7 @@
     casks = [
       "1password"
       "anydesk"
+      "epic-games"
       "firefox"
       "flutter"
       "font-caskaydia-cove-nerd-font"
