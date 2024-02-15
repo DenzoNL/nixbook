@@ -23,11 +23,14 @@
 
     casks = [
       "1password"
+      "anydesk"
       "firefox"
       "flutter"
       "font-caskaydia-cove-nerd-font"
+      "google-chrome"
       "hot"
       "insomnia"
+      "microsoft-teams"
       "openvpn-connect"
       "plexamp"
       "raycast"
