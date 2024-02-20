@@ -87,6 +87,10 @@
         export PATH=`gem environment gemdir`/bin:$PATH
       fi
 
+      if [ -d "$HOME/.cargo/bin" ]; then
+        export PATH=$HOME/.cargo/bin:$PATH
+      fi
+
       eval "$(/opt/homebrew/bin/brew shellenv)"
       export JAVA_HOME=${pkgs.jdk21.home}
     '';

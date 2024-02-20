@@ -39,6 +39,7 @@
       "scroll-reverser"
       "tailscale"
       "warp"
+      "zoom"
     ];
 
     masApps = {
