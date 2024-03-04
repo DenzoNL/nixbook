@@ -92,6 +92,9 @@
       fi
 
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      export PATH="$(brew --prefix)/opt/python@3.12/libexec/bin:$PATH"
+      export PATH=$HOME/.local/bin:$PATH
+
       export JAVA_HOME=${pkgs.jdk21.home}
     '';
     shellAliases = {
