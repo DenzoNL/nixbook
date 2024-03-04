@@ -13,11 +13,13 @@
 
     taps = [
       "homebrew/cask-fonts"
+      "robusta-dev/homebrew-krr"
     ];
 
     brews = [
       "cocoapods"
       "fastlane"
+      "krr"
       "ruby"
     ];
 
