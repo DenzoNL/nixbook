@@ -14,12 +14,14 @@
     taps = [
       "homebrew/cask-fonts"
       "robusta-dev/homebrew-krr"
+      "turbot/tap"
     ];
 
     brews = [
       "cocoapods"
       "fastlane"
       "krr"
+      "powerpipe"
       "ruby"
     ];
 
