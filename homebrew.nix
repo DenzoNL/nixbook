@@ -23,6 +23,7 @@
       "krr"
       "powerpipe"
       "ruby"
+      "steampipe"
     ];
 
     casks = [
