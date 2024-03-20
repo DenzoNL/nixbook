@@ -12,12 +12,14 @@
     };
 
     taps = [
+      "anchordotdev/tap"
       "homebrew/cask-fonts"
       "robusta-dev/homebrew-krr"
       "turbot/tap"
     ];
 
     brews = [
+      "anchor"
       "cocoapods"
       "fastlane"
       "krr"
