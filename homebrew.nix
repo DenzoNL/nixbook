@@ -23,6 +23,8 @@
       "cocoapods"
       "fastlane"
       "krr"
+      "ncftp"
+      "nss"
       "powerpipe"
       "ruby"
       "steampipe"
@@ -30,7 +32,6 @@
 
     casks = [
       "1password"
-      "anydesk"
       "epic-games"
       "firefox"
       "flutter"
