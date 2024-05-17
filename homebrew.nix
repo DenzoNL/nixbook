@@ -40,6 +40,7 @@
       "google-chrome"
       "hot"
       "insomnia"
+      "librewolf"
       "microsoft-teams"
       "openvpn-connect"
       "plexamp"
