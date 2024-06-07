@@ -51,7 +51,6 @@
     discord
     slack
     # Utility apps
-    obsidian
     slides
     # Random shell stuff
     fd
