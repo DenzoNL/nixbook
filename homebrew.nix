@@ -14,7 +14,6 @@
     taps = [
       "anchordotdev/tap"
       "homebrew/cask-fonts"
-      "robusta-dev/homebrew-krr"
       "turbot/tap"
     ];
 
@@ -22,17 +21,17 @@
       "anchor"
       "cocoapods"
       "fastlane"
-      "krr"
       "ncftp"
       "nss"
       "powerpipe"
       "ruby"
+      "spek"
       "steampipe"
     ];
 
     casks = [
       "1password"
-      "epic-games"
+      "anydesk"
       "firefox"
       "flutter"
       "font-caskaydia-cove-nerd-font"
@@ -44,8 +43,10 @@
       "obsidian"
       "openvpn-connect"
       "plexamp"
+      "publii"
       "raycast"
       "scroll-reverser"
+      "vlc"
       "warp"
       "zoom"
     ];
