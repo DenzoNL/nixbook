@@ -1,5 +1,5 @@
 # Configuration for homebrew
-{ ... }: 
+{ ... }:
 
 {
   homebrew = {
@@ -12,21 +12,16 @@
     };
 
     taps = [
-      "anchordotdev/tap"
       "homebrew/cask-fonts"
       "turbot/tap"
     ];
 
     brews = [
-      "anchor"
       "cocoapods"
       "fastlane"
-      "ncftp"
       "nss"
-      "powerpipe"
       "ruby"
       "spek"
-      "steampipe"
     ];
 
     casks = [
@@ -43,11 +38,12 @@
       "obsidian"
       "openvpn-connect"
       "plexamp"
-      "publii"
       "raycast"
       "scroll-reverser"
+      "steam"
       "vlc"
       "warp"
+      "zed"
       "zoom"
     ];
 
