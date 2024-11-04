@@ -75,6 +75,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users."d.bogers" = import ./home.nix;
+          home-manager.backupFileExtension = "backup";
         } 
       ];
     };

@@ -18,11 +18,10 @@
   # environment.
   home.packages = with pkgs;[
     # Nix-specific packages
-    nil
+    nixd
     # DevOps tools
     argocd
     awscli2
-    azure-cli
     bruno
     k9s
     kubectl
@@ -131,6 +130,75 @@
       yzhang.markdown-all-in-one
       zhuangtongfa.material-theme
     ];
+    userSettings = {
+      "workbench.startupEditor" = "none";
+      "editor.inlineSuggest.enabled" = true;
+      "editor.fontFamily" = "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
+      "terminal.integrated.fontFamily" = "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
+      "terminal.integrated.defaultLocation" = "editor";
+      "editor.fontLigatures" = true;
+      "editor.fontSize" = 16;
+      "terminal.integrated.fontSize" = 15;
+      "[markdown]" = {
+        "editor.formatOnSave" = true;
+      };
+      "[rust]" = {
+        "editor.formatOnSave" = true;
+      };
+      "editor.codeActionsOnSave" = {
+        "source.fixAll.eslint" = "explicit";
+      };
+      "[javascript]" = {
+        "editor.defaultFormatter" = "vscode.typescript-language-features";
+      };
+      "typescript.updateImportsOnFileMove.enabled" = "never";
+      "editor.accessibilitySupport" = "off";
+      "security.workspace.trust.untrustedFiles" = "open";
+      "[dockerfile]" = {
+        "editor.defaultFormatter" = "ms-azuretools.vscode-docker";
+      };
+      "search.maxResults" = 20000;
+      "workbench.editor.showTabs" = "single";
+      "nix.serverPath" = "nixd";
+      "nix.enableLanguageServer" = true;
+      "azureFunctions.showCoreToolsWarning" = false;
+      "checkov.token" = "a4c99388-7243-4846-ac67-51437920fb6a";
+      "window.commandCenter" = false;
+      "editor.multiCursorLimit" = 15000;
+      "workbench.activityBar.location" = "hidden";
+      "[yaml]" = {
+        "editor.defaultFormatter" = "redhat.vscode-yaml";
+      };
+      "[json]" = {
+        "editor.defaultFormatter" = "vscode.json-language-features";
+      };
+      "cSpell.userWords" = [
+        "boto"
+        "chargeback"
+        "DATASERVICE"
+        "dundle"
+        "karpenter"
+        "Korsit"
+      ];
+      "files.autoSave" = "afterDelay";
+      "[typescriptreact]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "javascript.updateImportsOnFileMove.enabled" = "never";
+      "[typescript]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "workbench.colorTheme" = "One Dark Pro Darker";
+      "[jsonc]" = {
+        "editor.defaultFormatter" = "vscode.json-language-features";
+      };
+      "[html]" = {
+        "editor.defaultFormatter" = "vscode.html-language-features";
+      };
+      "gitlab.duoCodeSuggestions.enabled" = true;
+      "editor.stickyScroll.enabled" = false;
+      "yaml.customTags" = [ "!reference sequence" ];
+    };
   };
 
   programs.git = {
