@@ -20,10 +20,12 @@
       "microsoft-teams"
       "openvpn-connect"
       "plexamp"
+      "orbstack"
       "raycast"
       "rectangle"
       "scroll-reverser"
       "steam"
+      "tailscale"
       "vlc"
       "warp"
     ];
