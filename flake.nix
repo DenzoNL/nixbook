@@ -66,9 +66,9 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .
-    darwinConfigurations."svartalfheim" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."Denniss-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       modules = [ 
-	      configuration
+	configuration
         ./homebrew.nix
         home-manager.darwinModules.home-manager
         {

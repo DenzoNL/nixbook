@@ -37,10 +37,7 @@
     jdk21
     maven
     # Container tools
-    colima
     dive
-    docker-client
-    docker-buildx
     # Security
     gobuster
     john
