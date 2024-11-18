@@ -11,6 +11,10 @@
       upgrade = true;
     };
 
+    brews = [
+      "gpg"
+    ];
+
     casks = [
       "firefox"
       "font-caskaydia-cove-nerd-font"
