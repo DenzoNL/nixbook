@@ -29,6 +29,9 @@
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
+      # Fix 'warning: Nix search path entry '/nix/var/nix/profiles/per-user/root/channels' does not exist, ignoring' error
+      nix.channel.enable =  false;
+
       # Explicitly add myself to trusted-users to prevent warnings.
       nix.settings.trusted-users = [
         "root"

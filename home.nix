@@ -22,6 +22,7 @@
     # DevOps tools
     argocd
     awscli2
+    aws-sam-cli
     bruno
     k9s
     kubectl
