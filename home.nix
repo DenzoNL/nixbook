@@ -32,7 +32,7 @@
     popeye
     # Development tools
     firebase-tools
-    mariadb
+    mysql80
     nodejs-18_x
     iterm2
     jdk21
