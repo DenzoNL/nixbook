@@ -20,8 +20,7 @@
           pkgs.vim
         ];
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
+      nix.enable = true;
 
       # Allow the installation of unfree packages
       nixpkgs.config.allowUnfree = true;
@@ -30,7 +29,7 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       # Fix 'warning: Nix search path entry '/nix/var/nix/profiles/per-user/root/channels' does not exist, ignoring' error
-      nix.channel.enable =  false;
+      nix.channel.enable = false;
 
       # Explicitly add myself to trusted-users to prevent warnings.
       nix.settings.trusted-users = [
@@ -46,13 +45,13 @@
 
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
-      system.stateVersion = 4;
+      system.stateVersion = 5;
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
       # Allow sudo using Touch ID
-      security.pam.enableSudoTouchIdAuth = true;
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       # Explicitly configure home directory for home-manager
       users.users."d.bogers".home = "/Users/d.bogers";

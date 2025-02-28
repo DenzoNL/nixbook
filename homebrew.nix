@@ -28,6 +28,7 @@
       "raycast"
       "rectangle"
       "scroll-reverser"
+      "signal"
       "steam"
       "tailscale"
       "vlc"
