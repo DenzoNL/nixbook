@@ -37,6 +37,7 @@
     iterm2
     jdk21
     maven
+    rustup
     # Container tools
     dive
     # Security
@@ -60,6 +61,9 @@
   # Enable direnv
   programs.direnv = {
     enable = true;
+    config = {
+      hide_env_diff = true;
+    };
     nix-direnv = {
       enable = true;
     };
@@ -92,6 +96,7 @@
       export PATH=$HOME/.local/bin:$PATH
 
       export JAVA_HOME=${pkgs.jdk21.home}
+      source $HOME/.cargo/env
     '';
     shellAliases = {
       k = "kubectl";
