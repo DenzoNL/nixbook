@@ -13,12 +13,13 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
-  
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     # Nix-specific packages
     nixd
+    nixfmt
     # DevOps tools
     argocd
     awscli2
@@ -54,19 +55,14 @@
     fd
     ripgrep
   ];
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   # Enable direnv
   programs.direnv = {
     enable = true;
-    config = {
-      hide_env_diff = true;
-    };
-    nix-direnv = {
-      enable = true;
-    };
+    config = { hide_env_diff = true; };
+    nix-direnv = { enable = true; };
   };
 
   programs.zsh = {
@@ -74,9 +70,7 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     dotDir = ".config/zsh";
-    syntaxHighlighting = {
-      enable = true;
-    };
+    syntaxHighlighting = { enable = true; };
     initExtra = ''
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -107,12 +101,12 @@
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-       }
-       {
-         name = "powerlevel10k-config";
-         src = lib.cleanSource ./p10k-config;
-         file = "p10k.zsh";
-       }
+      }
+      {
+        name = "powerlevel10k-config";
+        src = lib.cleanSource ./p10k-config;
+        file = "p10k.zsh";
+      }
     ];
   };
 
@@ -136,21 +130,17 @@
     userSettings = {
       "workbench.startupEditor" = "none";
       "editor.inlineSuggest.enabled" = true;
-      "editor.fontFamily" = "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
-      "terminal.integrated.fontFamily" = "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
+      "editor.fontFamily" =
+        "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
+      "terminal.integrated.fontFamily" =
+        "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
       "terminal.integrated.defaultLocation" = "editor";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 16;
       "terminal.integrated.fontSize" = 15;
-      "[markdown]" = {
-        "editor.formatOnSave" = true;
-      };
-      "[rust]" = {
-        "editor.formatOnSave" = true;
-      };
-      "editor.codeActionsOnSave" = {
-        "source.fixAll.eslint" = "explicit";
-      };
+      "[markdown]" = { "editor.formatOnSave" = true; };
+      "[rust]" = { "editor.formatOnSave" = true; };
+      "editor.codeActionsOnSave" = { "source.fixAll.eslint" = "explicit"; };
       "[javascript]" = {
         "editor.defaultFormatter" = "vscode.typescript-language-features";
       };
@@ -169,20 +159,12 @@
       "window.commandCenter" = false;
       "editor.multiCursorLimit" = 15000;
       "workbench.activityBar.location" = "hidden";
-      "[yaml]" = {
-        "editor.defaultFormatter" = "redhat.vscode-yaml";
-      };
+      "[yaml]" = { "editor.defaultFormatter" = "redhat.vscode-yaml"; };
       "[json]" = {
         "editor.defaultFormatter" = "vscode.json-language-features";
       };
-      "cSpell.userWords" = [
-        "boto"
-        "chargeback"
-        "DATASERVICE"
-        "dundle"
-        "karpenter"
-        "Korsit"
-      ];
+      "cSpell.userWords" =
+        [ "boto" "chargeback" "DATASERVICE" "dundle" "karpenter" "Korsit" ];
       "files.autoSave" = "afterDelay";
       "[typescriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -204,13 +186,9 @@
     };
   };
 
-  programs.git = {
-    enable = true;
-  };
+  programs.git = { enable = true; };
 
-  programs.gpg = {
-    enable = true;
-  };
+  programs.gpg = { enable = true; };
 
   programs.neovim = {
     enable = true;
