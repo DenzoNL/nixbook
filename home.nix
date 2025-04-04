@@ -28,6 +28,7 @@
     k9s
     kubectl
     kubernetes-helm
+    kustomize
     ssm-session-manager-plugin
     terraform
     popeye
