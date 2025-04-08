@@ -27,6 +27,7 @@
     bruno
     k9s
     kubectl
+    kubectx
     kubernetes-helm
     kustomize
     ssm-session-manager-plugin
@@ -95,6 +96,8 @@
     '';
     shellAliases = {
       k = "kubectl";
+      kc = "kubectx";
+      kn = "kubens";
       tf = "terraform";
     };
     plugins = [
