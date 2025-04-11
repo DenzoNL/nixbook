@@ -22,6 +22,7 @@
     nixfmt
     # DevOps tools
     argocd
+    argocd-autopilot
     awscli2
     aws-sam-cli
     bruno
