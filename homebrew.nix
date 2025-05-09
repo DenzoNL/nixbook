@@ -11,7 +11,7 @@
       upgrade = true;
     };
 
-    brews = [ "gpg" ];
+    brews = [ "gpg" "kubetail" "pixie" ];
 
     casks = [
       "firefox"

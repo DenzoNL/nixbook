@@ -25,7 +25,7 @@
     argocd-autopilot
     awscli2
     aws-sam-cli
-    bruno
+    comma
     k9s
     kubectl
     kubectx
@@ -33,27 +33,16 @@
     kustomize
     ssm-session-manager-plugin
     terraform
-    popeye
     # Development tools
-    firebase-tools
     mysql80
-    nodejs-18_x
+    nodejs_22
     iterm2
     jdk21
     maven
     rustup
-    # Container tools
-    dive
-    # Security
-    gobuster
-    john
-    nmap
-    sqlmap
     # Communications
     discord
     slack
-    # Utility apps
-    slides
     # Random shell stuff
     fd
     ripgrep
