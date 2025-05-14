@@ -14,6 +14,7 @@
     brews = [ "gpg" "kubetail" "pixie" ];
 
     casks = [
+      "chatgpt"
       "firefox"
       "font-caskaydia-cove-nerd-font"
       "gitkraken"

@@ -177,6 +177,7 @@
       "gitlab.duoCodeSuggestions.enabled" = true;
       "editor.stickyScroll.enabled" = false;
       "yaml.customTags" = [ "!reference sequence" ];
+      "sops.defaults.ageKeyFile" = "~/.config/sops/age/keys.txt";
     };
   };
 
