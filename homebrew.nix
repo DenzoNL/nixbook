@@ -11,7 +11,11 @@
       upgrade = true;
     };
 
-    brews = [ "gpg" "kubetail" "pixie" ];
+    taps = [
+      "DenzoNL/rdslink"
+    ];
+
+    brews = [ "cmake" "go" "gpg" "kubetail" "mingw-w64" "rdslink" ];
 
     casks = [
       "chatgpt"
@@ -21,6 +25,7 @@
       "hot"
       "insomnia"
       "microsoft-teams"
+      "multiviewer-for-f1"
       "openvpn-connect"
       "orbstack"
       "plexamp"
