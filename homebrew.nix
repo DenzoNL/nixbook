@@ -28,6 +28,7 @@
       "multiviewer-for-f1"
       "openvpn-connect"
       "orbstack"
+      "orion"
       "plexamp"
       "private-internet-access"
       "raycast"

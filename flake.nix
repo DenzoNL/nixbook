@@ -11,7 +11,9 @@
 
   outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs }:
     let
-      configuration = { pkgs, ... }: {
+      userName = "d.bogers";
+      configuration = { pkgs, ... }: 
+      {
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
         environment.systemPackages = [ pkgs.cachix pkgs.vim ];
@@ -28,7 +30,7 @@
         nix.channel.enable = false;
 
         # Explicitly add myself to trusted-users to prevent warnings.
-        nix.settings.trusted-users = [ "root" "d.bogers" ];
+        nix.settings.trusted-users = [ "root" userName ];
 
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true; # default shell on catalina
@@ -47,14 +49,16 @@
         security.pam.services.sudo_local.touchIdAuth = true;
 
         # Explicitly configure home directory for home-manager
-        users.users."d.bogers".home = "/Users/d.bogers";
+        users.users.${userName}.home = "/Users/${userName}";
+
+        system.primaryUser = userName;
 
         # Always display hidden files.
         system.defaults.NSGlobalDomain.AppleShowAllFiles = true;
 
         # Add shell alias to rebuild this config.
         environment.shellAliases = {
-          rebuild = "darwin-rebuild switch --flake /Users/d.bogers/nixbook";
+          rebuild = "darwin-rebuild switch --flake /Users/${userName}/nixbook";
         };
       };
     in {
@@ -68,10 +72,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users."d.bogers" = import ./home.nix;
+            home-manager.users.${userName} = import ./home.nix;
             home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit userName; };
           }
         ];
+        specialArgs = { inherit userName; };
       };
 
       # Expose the package set, including overlays, for convenience.

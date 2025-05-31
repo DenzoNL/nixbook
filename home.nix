@@ -1,9 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, userName, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "d.bogers";
+  home.username = userName;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -177,7 +177,7 @@
       "gitlab.duoCodeSuggestions.enabled" = true;
       "editor.stickyScroll.enabled" = false;
       "yaml.customTags" = [ "!reference sequence" ];
-      "sops.defaults.ageKeyFile" = "/Users/d.bogers/.config/sops/age/keys.txt";
+      "sops.defaults.ageKeyFile" = "/Users/${userName}/.config/sops/age/keys.txt";
     };
   };
 
