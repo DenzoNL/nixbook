@@ -58,7 +58,7 @@
 
         # Add shell alias to rebuild this config.
         environment.shellAliases = {
-          rebuild = "darwin-rebuild switch --flake /Users/${userName}/nixbook";
+          rebuild = "sudo darwin-rebuild switch --flake /Users/${userName}/nixbook";
         };
       };
     in {
