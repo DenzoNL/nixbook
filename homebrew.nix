@@ -36,7 +36,7 @@
       "scroll-reverser"
       "signal"
       "steam"
-      "tailscale"
+      "tailscale-app"
       "vlc"
       "warp"
     ];
