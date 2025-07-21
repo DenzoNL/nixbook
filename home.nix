@@ -1,6 +1,10 @@
 { pkgs, userName, ... }:
 
 {
+  imports = [
+    ./nixvim.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = userName;
@@ -19,7 +23,7 @@
   home.packages = with pkgs; [
     # Nix-specific packages
     nixd
-    nixfmt
+    nixfmt-classic
     # DevOps tools
     argocd
     argocd-autopilot
@@ -174,11 +178,4 @@
   programs.git = { enable = true; };
 
   programs.gpg = { enable = true; };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-  };
 }

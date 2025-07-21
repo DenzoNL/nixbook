@@ -7,9 +7,11 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim }:
     let
       userName = "d.bogers";
       configuration = { pkgs, ... }: 
@@ -79,6 +81,7 @@
             home-manager.users.${userName} = import ./home.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit userName; };
+            home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
           }
         ];
         specialArgs = { inherit userName; };
