@@ -57,12 +57,8 @@
     nix-direnv = { enable = true; };
   };
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
-    autosuggestion.enable = true;
-    enableCompletion = true;
-    dotDir = ".config/zsh";
-    syntaxHighlighting = { enable = true; };
     shellAliases = {
       k = "kubectl";
       kc = "kubectx";
@@ -74,7 +70,11 @@
   # Enable starship prompt
   programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
+    settings = {
+      # Increase command timeout to prevent Java detection issues
+      command_timeout = 1000;
+    };
   };
 
   # Configure my IDE, VSCode

@@ -34,6 +34,7 @@
 
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true; # default shell on catalina
+        programs.fish.enable = true; # enable fish shell
 
         # Set Git commit hash for darwin-version.
         system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -48,8 +49,11 @@
         # Allow sudo using Touch ID
         security.pam.services.sudo_local.touchIdAuth = true;
 
-        # Explicitly configure home directory for home-manager
-        users.users.${userName}.home = "/Users/${userName}";
+        # Configure user with home directory and shell
+        users.users.${userName} = {
+          home = "/Users/${userName}";
+          shell = pkgs.fish;
+        };
 
         system.primaryUser = userName;
 
