@@ -9,7 +9,7 @@
     vimAlias = true;
 
     # Color scheme
-    colorschemes.nord.enable = true;
+    colorschemes.onedark.enable = true;
 
     # Core plugins
     plugins = {
@@ -89,7 +89,7 @@
       # Status line
       lualine = {
         enable = true;
-        settings.options.theme = "nord";
+        settings.options.theme = "onedark";
       };
 
       # Git integration
@@ -97,6 +97,28 @@
 
       # Icons (explicitly enabled to avoid deprecation warning)
       web-devicons.enable = true;
+
+      # Integrated terminal (VS Code style)
+      toggleterm = {
+        enable = true;
+        settings = {
+          size = 20;
+          open_mapping = "[[<C-\\>]]";
+          hide_numbers = true;
+          shade_filetypes = [];
+          shade_terminals = true;
+          shading_factor = 2;
+          start_in_insert = true;
+          insert_mappings = true;
+          persist_size = true;
+          direction = "horizontal";
+          close_on_exit = true;
+          shell = "fish";
+          winbar = {
+            enabled = false;
+          };
+        };
+      };
 
       # Auto-pairs
       nvim-autopairs.enable = true;
@@ -180,6 +202,54 @@
         key = "<leader>q";
         action = ":q<CR>";
         options.desc = "Quit";
+      }
+
+      # Terminal toggle
+      {
+        mode = "n";
+        key = "<leader>t";
+        action = ":ToggleTerm<CR>";
+        options.desc = "Toggle terminal";
+      }
+
+      # Terminal toggle with Ctrl+` (like VS Code)
+      {
+        mode = "n";
+        key = "<C-`>";
+        action = ":ToggleTerm<CR>";
+        options.desc = "Toggle terminal (VS Code style)";
+      }
+
+      # Terminal navigation in terminal mode
+      {
+        mode = "t";
+        key = "<Esc>";
+        action = "<C-\\><C-n>";
+        options.desc = "Exit terminal mode";
+      }
+      {
+        mode = "t";
+        key = "<C-h>";
+        action = "<C-\\><C-n><C-w>h";
+        options.desc = "Move to left window";
+      }
+      {
+        mode = "t";
+        key = "<C-j>";
+        action = "<C-\\><C-n><C-w>j";
+        options.desc = "Move to bottom window";
+      }
+      {
+        mode = "t";
+        key = "<C-k>";
+        action = "<C-\\><C-n><C-w>k";
+        options.desc = "Move to top window";
+      }
+      {
+        mode = "t";
+        key = "<C-l>";
+        action = "<C-\\><C-n><C-w>l";
+        options.desc = "Move to right window";
       }
 
       # Copilot Chat
