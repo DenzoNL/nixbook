@@ -33,16 +33,16 @@
             installCargo = false; # We have rustup
             installRustc = false;
           };
-          
+
           # TypeScript/JavaScript
           ts_ls.enable = true;
-          
+
           # Java
           jdtls.enable = true;
-          
+
           # Terraform
           terraformls.enable = true;
-          
+
           # Nix (since you're using it)
           nixd.enable = true;
         };
@@ -65,7 +65,7 @@
             { name = "buffer"; }
             { name = "path"; }
           ];
-        }; 
+        };
       };
 
       # File explorer
@@ -121,7 +121,7 @@
         enable = true;
         settings = {
           debug = false;
-          show_help = "yes";
+          show_help = true;
           question_header = "## User ";
           answer_header = "## Copilot ";
           error_header = "## Error ";
@@ -165,7 +165,7 @@
         action = ":Neotree toggle<CR>";
         options.desc = "Toggle file explorer";
       }
-      
+
       # Save file
       {
         mode = "n";
@@ -173,7 +173,7 @@
         action = ":w<CR>";
         options.desc = "Save file";
       }
-      
+
       # Quit
       {
         mode = "n";
@@ -224,7 +224,6 @@
     # Basic options
     opts = {
       number = true;
-      relativenumber = true;
       tabstop = 2;
       shiftwidth = 2;
       expandtab = true;
