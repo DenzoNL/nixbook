@@ -116,6 +116,25 @@
       # Copilot completion integration
       copilot-cmp.enable = true;
 
+      # Copilot Chat
+      copilot-chat = {
+        enable = true;
+        settings = {
+          debug = false;
+          show_help = "yes";
+          question_header = "## User ";
+          answer_header = "## Copilot ";
+          error_header = "## Error ";
+          separator = "───";
+          show_folds = true;
+          show_user_selection = true;
+          auto_follow_cursor = true;
+          auto_insert_mode = false;
+          clear_chat_on_new_prompt = false;
+          context = "buffers";
+        };
+      };
+
       # Formatting
       conform-nvim = {
         enable = true;
@@ -161,6 +180,44 @@
         key = "<leader>q";
         action = ":q<CR>";
         options.desc = "Quit";
+      }
+
+      # Copilot Chat
+      {
+        mode = "n";
+        key = "<leader>cc";
+        action = ":CopilotChat<CR>";
+        options.desc = "Open Copilot Chat";
+      }
+      {
+        mode = "n";
+        key = "<leader>ce";
+        action = ":CopilotChatExplain<CR>";
+        options.desc = "Explain code with Copilot";
+      }
+      {
+        mode = "n";
+        key = "<leader>cr";
+        action = ":CopilotChatReview<CR>";
+        options.desc = "Review code with Copilot";
+      }
+      {
+        mode = "n";
+        key = "<leader>cf";
+        action = ":CopilotChatFix<CR>";
+        options.desc = "Fix code with Copilot";
+      }
+      {
+        mode = "n";
+        key = "<leader>co";
+        action = ":CopilotChatOptimize<CR>";
+        options.desc = "Optimize code with Copilot";
+      }
+      {
+        mode = "v";
+        key = "<leader>cc";
+        action = ":CopilotChatVisual<CR>";
+        options.desc = "Chat about selected code";
       }
     ];
 
