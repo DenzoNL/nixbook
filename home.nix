@@ -1,4 +1,4 @@
-{ pkgs, lib, userName, ... }:
+{ pkgs, userName, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -63,45 +63,18 @@
     enableCompletion = true;
     dotDir = ".config/zsh";
     syntaxHighlighting = { enable = true; };
-    initExtra = ''
-      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-      fi
-
-      if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
-        export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-        export PATH=`gem environment gemdir`/bin:$PATH
-      fi
-
-      if [ -d "$HOME/.cargo/bin" ]; then
-        export PATH=$HOME/.cargo/bin:$PATH
-      fi
-
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-      export PATH="$(brew --prefix)/opt/python@3.12/libexec/bin:$PATH"
-      export PATH=$HOME/.local/bin:$PATH
-
-      export JAVA_HOME=${pkgs.jdk21.home}
-      source $HOME/.cargo/env
-    '';
     shellAliases = {
       k = "kubectl";
       kc = "kubectx";
       kn = "kubens";
       tf = "terraform";
     };
-    plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-        name = "powerlevel10k-config";
-        src = lib.cleanSource ./p10k-config;
-        file = "p10k.zsh";
-      }
-    ];
+  };
+
+  # Enable starship prompt
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   # Configure my IDE, VSCode

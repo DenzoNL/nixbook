@@ -13,9 +13,10 @@
 
     taps = [
       "DenzoNL/rdslink"
+      "cargo-lambda/tap"
     ];
 
-    brews = [ "cmake" "go" "gpg" "kubetail" "mingw-w64" "rdslink" ];
+    brews = [ "cargo-lambda" "cmake" "go" "gpg" "kubetail" "mingw-w64" "rdslink" ];
 
     casks = [
       "chatgpt"
