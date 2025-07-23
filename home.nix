@@ -30,6 +30,7 @@
     awscli2
     aws-sam-cli
     comma
+    inetutils
     k9s
     kubectl
     kubectx
