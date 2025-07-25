@@ -29,6 +29,7 @@
     argocd-autopilot
     awscli2
     aws-sam-cli
+    azure-cli
     comma
     inetutils
     k9s
@@ -41,7 +42,6 @@
     # Development tools
     mysql80
     nodejs_22
-    iterm2
     jdk21
     maven
     rustup
@@ -52,6 +52,9 @@
     fd
     ripgrep
     eza # Modern replacement for ls
+    bat # Enhanced cat with syntax highlighting
+    dust # Modern du replacement
+    delta # Better Git diff viewer
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -74,6 +77,10 @@
       kc = "kubectx";
       kn = "kubens";
       tf = "terraform";
+      
+      # Modern CLI tool replacements
+      cat = "bat -pp";  # Plain output, no paging, but with syntax highlighting
+      du = "dust";      # Better disk usage display
       
       # Modern replacements for ls
       ls = "exa --icons";
@@ -179,7 +186,17 @@
     };
   };
 
-  programs.git = { enable = true; };
+  programs.git = { 
+    enable = true;
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        light = false;
+        side-by-side = true;
+      };
+    };
+  };
 
   programs.gpg = { enable = true; };
 }

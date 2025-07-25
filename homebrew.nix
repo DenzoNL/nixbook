@@ -40,6 +40,7 @@
       "tailscale-app"
       "vlc"
       "warp"
+      "zed"
     ];
   };
 }
