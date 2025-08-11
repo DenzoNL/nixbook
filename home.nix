@@ -1,4 +1,4 @@
-{ pkgs, userName, ... }:
+{ pkgs, lib, userName, ... }:
 
 {
   imports = [
@@ -70,6 +70,9 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      ${lib.optionalString pkgs.stdenv.isDarwin ''
+        eval (/opt/homebrew/bin/brew shellenv)
+      ''}
     '';
     shellAliases = {
       # Kubernetes aliases
