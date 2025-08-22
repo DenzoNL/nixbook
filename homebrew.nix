@@ -23,6 +23,7 @@
       "firefox"
       "font-caskaydia-cove-nerd-font"
       "gitkraken"
+      "heroic"
       "hot"
       "insomnia"
       "microsoft-teams"
