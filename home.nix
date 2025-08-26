@@ -70,6 +70,8 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      # Add ~/.local/bin to PATH
+      fish_add_path -p $HOME/.local/bin
       ${lib.optionalString pkgs.stdenv.isDarwin ''
         eval (/opt/homebrew/bin/brew shellenv)
       ''}
