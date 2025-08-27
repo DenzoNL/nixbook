@@ -28,8 +28,6 @@
     argocd
     argocd-autopilot
     awscli2
-    aws-sam-cli
-    azure-cli
     comma
     inetutils
     k9s
@@ -102,7 +100,7 @@
     enableFishIntegration = true;
     settings = {
       # Increase command timeout to prevent Java detection issues
-      command_timeout = 1000;
+      command_timeout = 2000;
     };
   };
 
