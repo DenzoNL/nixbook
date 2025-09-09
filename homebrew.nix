@@ -40,6 +40,7 @@
       "steam"
       "tailscale-app"
       "vlc"
+      "vivaldi"
       "warp"
       "zed"
     ];
