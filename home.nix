@@ -104,6 +104,14 @@
     };
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    options = [
+      "--cmd cd"
+    ];
+  };
+
   # Configure my IDE, VSCode
   programs.vscode = {
     enable = true;

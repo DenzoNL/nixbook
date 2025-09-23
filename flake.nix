@@ -81,7 +81,7 @@
             home-manager.users.${userName} = import ./home.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit userName; };
-            home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
+            home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
           }
         ];
         specialArgs = { inherit userName; };
