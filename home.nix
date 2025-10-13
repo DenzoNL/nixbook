@@ -39,8 +39,8 @@
     terraform
     # Development tools
     mysql80
-    nodejs_22
-    jdk21
+    nodejs_22 
+    jdk25
     maven
     rustup
     # Communications
@@ -126,7 +126,6 @@
         ms-azuretools.vscode-docker
         octref.vetur
         redhat.vscode-yaml
-        rust-lang.rust-analyzer
         yzhang.markdown-all-in-one
         zhuangtongfa.material-theme
       ];
