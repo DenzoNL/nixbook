@@ -27,6 +27,7 @@
     # DevOps tools
     argocd
     argocd-autopilot
+    argonaut
     awscli2
     comma
     inetutils

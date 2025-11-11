@@ -14,6 +14,11 @@
   outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim }:
     let
       userName = "d.bogers";
+
+      # Custom packages overlay
+      customPackagesOverlay = final: prev:
+        import ./packages { pkgs = final; };
+
       configuration = { pkgs, ... }: 
       {
         # List packages installed in system profile. To search by name, run:
@@ -24,6 +29,9 @@
 
         # Allow the installation of unfree packages
         nixpkgs.config.allowUnfree = true;
+
+        # Apply custom packages overlay
+        nixpkgs.overlays = [ customPackagesOverlay ];
 
         # Necessary for using flakes on this system.
         nix.settings.experimental-features = "nix-command flakes";
@@ -88,6 +96,19 @@
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."svartalfheim".pkgs;
+      darwinPackages = self.darwinConfigurations."Denniss-MacBook-Pro".pkgs;
+
+      # Expose custom packages
+      packages.aarch64-darwin =
+        let
+          pkgs = import nixpkgs {
+            system = "aarch64-darwin";
+            overlays = [ customPackagesOverlay ];
+          };
+        in
+        {
+          inherit (pkgs) argonaut;
+          default = pkgs.argonaut;
+        };
     };
 }
