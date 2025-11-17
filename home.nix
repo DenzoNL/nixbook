@@ -21,39 +21,35 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # Nix-specific packages
-    nixd
-    nixfmt-classic
-    # DevOps tools
     argocd
     argocd-autopilot
     argonaut
     awscli2
+    bat # Enhanced cat with syntax highlighting
     comma
+    delta # Better Git diff viewer
+    discord
+    dust # Modern du replacement
+    eza # Modern replacement for ls
+    fd
+    graphviz
     inetutils
+    jdk25
     k9s
     kubectl
     kubectx
     kubernetes-helm
     kustomize
+    maven
+    mysql80
+    nixd
+    nixfmt-classic
+    nodejs_22 
+    ripgrep
+    rustup
+    slack
     ssm-session-manager-plugin
     terraform
-    # Development tools
-    mysql80
-    nodejs_22 
-    jdk25
-    maven
-    rustup
-    # Communications
-    discord
-    slack
-    # Random shell stuff
-    fd
-    ripgrep
-    eza # Modern replacement for ls
-    bat # Enhanced cat with syntax highlighting
-    dust # Modern du replacement
-    delta # Better Git diff viewer
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
