@@ -34,7 +34,6 @@
     fd
     graphviz
     inetutils
-    jdk25
     k9s
     kubectl
     kubectx
@@ -222,6 +221,11 @@
         side-by-side = true;
       };
     };
+  };
+
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk25_headless;
   };
 
   programs.gpg = { enable = true; };
