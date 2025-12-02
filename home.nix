@@ -27,6 +27,7 @@
     awscli2
     bat # Enhanced cat with syntax highlighting
     comma
+    d2
     delta # Better Git diff viewer
     discord
     dust # Modern du replacement
