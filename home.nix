@@ -29,6 +29,7 @@
     comma
     d2
     delta # Better Git diff viewer
+    devenv
     discord
     dust # Modern du replacement
     eza # Modern replacement for ls
@@ -45,11 +46,13 @@
     nixd
     nixfmt-classic
     nodejs_22 
+    pnpm
     ripgrep
     rustup
     slack
     ssm-session-manager-plugin
     terraform
+    usbutils
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
