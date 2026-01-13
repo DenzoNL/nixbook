@@ -16,7 +16,7 @@
       "cargo-lambda/tap"
     ];
 
-    brews = [ "cargo-lambda" "cmake" "go" "gpg" "kubetail" "mingw-w64" "rdslink" ];
+    brews = [ "cargo-lambda" "go" "gpg" "kubetail" "llvm" "mingw-w64" "rdslink" ];
 
     casks = [
       "claude"

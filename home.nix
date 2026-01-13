@@ -26,6 +26,8 @@
     argonaut
     awscli2
     bat # Enhanced cat with syntax highlighting
+    clang-tools
+    cmake
     comma
     d2
     delta # Better Git diff viewer
@@ -53,6 +55,7 @@
     ssm-session-manager-plugin
     terraform
     usbutils
+    vcpkg
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
