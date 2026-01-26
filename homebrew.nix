@@ -22,6 +22,7 @@
       "battle-net"
       "claude"
       "claude-code"
+      "curseforge"
       "firefox"
       "font-caskaydia-cove-nerd-font"
       "gitkraken"
