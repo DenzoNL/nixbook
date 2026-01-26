@@ -19,6 +19,7 @@
     brews = [ "cargo-lambda" "go" "gpg" "kubetail" "llvm" "mingw-w64" "rdslink" ];
 
     casks = [
+      "battle-net"
       "claude"
       "claude-code"
       "firefox"
