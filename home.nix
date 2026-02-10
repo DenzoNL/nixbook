@@ -26,6 +26,7 @@
     argonaut
     awscli2
     bat # Enhanced cat with syntax highlighting
+    bun
     clang-tools
     cmake
     comma
