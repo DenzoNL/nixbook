@@ -20,6 +20,7 @@
 
     casks = [
       "battle-net"
+      "burp-suite"
       "claude"
       "claude-code"
       "curseforge"
