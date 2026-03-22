@@ -19,15 +19,16 @@
     brews = [ "cargo-lambda" "go" "gpg" "kubetail" "llvm" "mingw-w64" "rdslink" ];
 
     casks = [
+      "1password-cli"
       "battle-net"
       "burp-suite"
       "claude"
       "claude-code"
       "curseforge"
+      "emdash"
       "firefox"
       "font-caskaydia-cove-nerd-font"
       "gitkraken"
-      "heroic"
       "hot"
       "insomnia"
       "microsoft-teams"

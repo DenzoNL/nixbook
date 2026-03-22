@@ -44,6 +44,7 @@
     kubectx
     kubernetes-helm
     kustomize
+    legendary-gl
     maven
     mysql80
     nixd
