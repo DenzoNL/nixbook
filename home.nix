@@ -23,6 +23,7 @@
   home.packages = with pkgs; [
     argocd
     argocd-autopilot
+    azahar
     argonaut
     awscli2
     bat # Enhanced cat with syntax highlighting

@@ -1,8 +1,6 @@
-{ pkgs }:
+{ pkgs, prev ? pkgs }:
 
 {
   argonaut = pkgs.callPackage ./argonaut { };
-
-  # Add more custom packages here as needed
-  # example = pkgs.callPackage ./example { };
+  azahar = pkgs.callPackage ./azahar { azahar = prev.azahar; };
 }

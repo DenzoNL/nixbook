@@ -17,7 +17,7 @@
 
       # Custom packages overlay
       customPackagesOverlay = final: prev:
-        import ./packages { pkgs = final; };
+        import ./packages { pkgs = final; inherit prev; };
 
       configuration = { pkgs, ... }: 
       {
