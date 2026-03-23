@@ -37,6 +37,7 @@
     dust # Modern du replacement
     eza # Modern replacement for ls
     fd
+    gh
     graphviz
     inetutils
     k9s
