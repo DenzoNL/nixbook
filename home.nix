@@ -30,7 +30,6 @@
     clang-tools
     cmake
     comma
-    d2
     delta # Better Git diff viewer
     devenv
     discord
@@ -47,9 +46,8 @@
     kustomize
     legendary-gl
     maven
-    mysql80
     nixd
-    nixfmt-classic
+    nixfmt
     nodejs_22 
     pnpm
     ripgrep
@@ -57,8 +55,7 @@
     slack
     ssm-session-manager-plugin
     terraform
-    usbutils
-    vcpkg
+    opentofu
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -187,7 +184,7 @@
         "[typescript]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
-        "workbench.colorTheme" = "One Dark Pro Darker";
+        "workbench.colorTheme" = "Default Light Modern";
         "[jsonc]" = {
           "editor.defaultFormatter" = "vscode.json-language-features";
         };
