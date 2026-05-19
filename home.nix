@@ -37,6 +37,7 @@
     eza # Modern replacement for ls
     fd
     gh
+    glab
     graphviz
     inetutils
     k9s
