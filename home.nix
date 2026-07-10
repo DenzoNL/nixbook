@@ -219,15 +219,22 @@
     };
   };
 
-  programs.git = { 
+  # nh: nicer wrapper around darwin-rebuild (build output via nix-output-monitor).
+  # Sets NH_FLAKE so `nh darwin switch` needs no arguments.
+  programs.nh = {
     enable = true;
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        light = false;
-        side-by-side = true;
-      };
+    flake = "/Users/${userName}/nixbook";
+  };
+
+  programs.git = { enable = true; };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      light = false;
+      side-by-side = true;
     };
   };
 
