@@ -42,6 +42,10 @@
         # Explicitly add myself to trusted-users to prevent warnings.
         nix.settings.trusted-users = [ "root" userName ];
 
+        # Run an aarch64-linux builder VM so NixOS derivations and VM tests
+        # can be built locally (e.g. for nixpkgs contributions).
+        nix.linux-builder.enable = true;
+
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true; # default shell on catalina
         programs.fish.enable = true; # enable fish shell
