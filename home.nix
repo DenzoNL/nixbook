@@ -30,6 +30,7 @@
     clang-tools
     cmake
     comma
+    datadog-pup
     delta # Better Git diff viewer
     devenv
     discord
@@ -49,7 +50,7 @@
     maven
     nixd
     nixfmt
-    nodejs_22 
+    nodejs_22
     pnpm
     ripgrep
     rustup
@@ -84,11 +85,11 @@
       kc = "kubectx";
       kn = "kubens";
       tf = "terraform";
-      
+
       # Modern CLI tool replacements
       cat = "bat -pp";  # Plain output, no paging, but with syntax highlighting
       du = "dust";      # Better disk usage display
-      
+
       # Modern replacements for ls
       ls = "exa --icons";
       ll = "exa -l --icons --git";
