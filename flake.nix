@@ -9,9 +9,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    freegosy.url = "github:DenzoNL/Freegosy/aarch64-darwin-support";
+    freegosy.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim }:
+  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim, freegosy }:
     let
       userName = "d.bogers";
 
@@ -23,7 +25,11 @@
       {
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
-        environment.systemPackages = [ pkgs.cachix pkgs.vim ];
+        environment.systemPackages = [
+          pkgs.cachix
+          pkgs.vim
+          freegosy.packages.aarch64-darwin.default
+        ];
 
         nix.enable = true;
 
