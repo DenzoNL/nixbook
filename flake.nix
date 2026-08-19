@@ -7,19 +7,12 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, nixvim }:
+  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs }:
     let
       userName = "d.bogers";
-
-      # Custom packages overlay
-      customPackagesOverlay = final: prev:
-        import ./packages { pkgs = final; inherit prev; };
-
-      configuration = { pkgs, ... }: 
+      configuration = { pkgs, ... }:
       {
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
@@ -30,9 +23,6 @@
         # Allow the installation of unfree packages
         nixpkgs.config.allowUnfree = true;
 
-        # Apply custom packages overlay
-        nixpkgs.overlays = [ customPackagesOverlay ];
-
         # Necessary for using flakes on this system.
         nix.settings.experimental-features = "nix-command flakes";
 
@@ -41,10 +31,6 @@
 
         # Explicitly add myself to trusted-users to prevent warnings.
         nix.settings.trusted-users = [ "root" userName ];
-
-        # Run an aarch64-linux builder VM so NixOS derivations and VM tests
-        # can be built locally (e.g. for nixpkgs contributions).
-        nix.linux-builder.enable = true;
 
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true; # default shell on catalina
@@ -93,7 +79,6 @@
             home-manager.users.${userName} = import ./home.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit userName; };
-            home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
           }
         ];
         specialArgs = { inherit userName; };
@@ -101,18 +86,5 @@
 
       # Expose the package set, including overlays, for convenience.
       darwinPackages = self.darwinConfigurations."Denniss-MacBook-Pro".pkgs;
-
-      # Expose custom packages
-      packages.aarch64-darwin =
-        let
-          pkgs = import nixpkgs {
-            system = "aarch64-darwin";
-            overlays = [ customPackagesOverlay ];
-          };
-        in
-        {
-          inherit (pkgs) argonaut;
-          default = pkgs.argonaut;
-        };
     };
 }

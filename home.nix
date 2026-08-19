@@ -1,10 +1,6 @@
 { pkgs, lib, userName, ... }:
 
 {
-  imports = [
-    ./nixvim.nix
-  ];
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = userName;
@@ -23,7 +19,6 @@
   home.packages = with pkgs; [
     argocd
     argocd-autopilot
-    argonaut
     awscli2
     bat # Enhanced cat with syntax highlighting
     bun
@@ -115,109 +110,6 @@
     options = [
       "--cmd cd"
     ];
-  };
-
-  # Configure my IDE, VSCode
-  programs.vscode = {
-    enable = true;
-    profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
-        dbaeumer.vscode-eslint
-        eamodio.gitlens
-        gitlab.gitlab-workflow
-        hashicorp.terraform
-        jnoortheen.nix-ide
-        mkhl.direnv
-        ms-azuretools.vscode-docker
-        octref.vetur
-        redhat.vscode-yaml
-        yzhang.markdown-all-in-one
-        zhuangtongfa.material-theme
-      ];
-      userSettings = {
-        "workbench.startupEditor" = "none";
-        "editor.inlineSuggest.enabled" = true;
-        "editor.fontFamily" =
-          "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
-        "terminal.integrated.fontFamily" =
-          "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace";
-        "terminal.integrated.defaultLocation" = "editor";
-        "terminal.integrated.defaultProfile.osx" = "fish";
-        "terminal.integrated.profiles.osx" = {
-          "fish" = {
-            "path" = "/etc/profiles/per-user/${userName}/bin/fish";
-          };
-        };
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = 16;
-        "terminal.integrated.fontSize" = 15;
-        "[markdown]" = { "editor.formatOnSave" = true; };
-        "[rust]" = { "editor.formatOnSave" = true; };
-        "editor.codeActionsOnSave" = { "source.fixAll.eslint" = "explicit"; };
-        "[javascript]" = {
-          "editor.defaultFormatter" = "vscode.typescript-language-features";
-        };
-        "typescript.updateImportsOnFileMove.enabled" = "never";
-        "editor.accessibilitySupport" = "off";
-        "security.workspace.trust.untrustedFiles" = "open";
-        "[dockerfile]" = {
-          "editor.defaultFormatter" = "ms-azuretools.vscode-docker";
-        };
-        "search.maxResults" = 20000;
-        "workbench.editor.showTabs" = "single";
-        "nix.serverPath" = "nixd";
-        "nix.enableLanguageServer" = true;
-        "azureFunctions.showCoreToolsWarning" = false;
-        "checkov.token" = "a4c99388-7243-4846-ac67-51437920fb6a";
-        "window.commandCenter" = false;
-        "editor.multiCursorLimit" = 15000;
-        "workbench.activityBar.location" = "hidden";
-        "[yaml]" = { "editor.defaultFormatter" = "redhat.vscode-yaml"; };
-        "[json]" = {
-          "editor.defaultFormatter" = "vscode.json-language-features";
-        };
-        "cSpell.userWords" =
-          [ "boto" "chargeback" "DATASERVICE" "dundle" "karpenter" "Korsit" ];
-        "files.autoSave" = "afterDelay";
-        "[typescriptreact]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
-        "javascript.updateImportsOnFileMove.enabled" = "never";
-        "[typescript]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
-        "workbench.colorTheme" = "Default Light Modern";
-        "[jsonc]" = {
-          "editor.defaultFormatter" = "vscode.json-language-features";
-        };
-        "[html]" = {
-          "editor.defaultFormatter" = "vscode.html-language-features";
-        };
-        "gitlab.duoCodeSuggestions.enabled" = true;
-        "editor.stickyScroll.enabled" = false;
-        "yaml.customTags" = [ "!reference sequence" ];
-        "sops.defaults.ageKeyFile" = "/Users/${userName}/.config/sops/age/keys.txt";
-        "files.exclude" = {
-          "**/.git" = true;
-          "**/.svn" = true;
-          "**/.hg" = true;
-          "**/CVS" = true;
-          "**/.DS_Store" = true;
-          "**/tmp" = true;
-          "**/node_modules" = true;
-          "**/bower_components" = true;
-          "**/dist" = true;
-        };
-        "files.watcherExclude" = {
-          "**/.git/objects/**" = true;
-          "**/.git/subtree-cache/**" = true;
-          "**/node_modules/**" = true;
-          "**/tmp/**" = true;
-          "**/bower_components/**" = true;
-          "**/dist/**" = true;
-        };
-      };
-    };
   };
 
   # nh: nicer wrapper around darwin-rebuild (build output via nix-output-monitor).
