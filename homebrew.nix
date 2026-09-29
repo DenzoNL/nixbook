@@ -22,7 +22,7 @@
       "1password-cli"
       "battle-net"
       "claude"
-      "claude-code"
+      "claude-code@latest"
       "curseforge"
       "firefox"
       "font-caskaydia-cove-nerd-font"
