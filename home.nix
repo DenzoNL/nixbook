@@ -28,7 +28,6 @@
     datadog-pup
     delta # Better Git diff viewer
     devenv
-    discord
     dust # Modern du replacement
     eza # Modern replacement for ls
     fd

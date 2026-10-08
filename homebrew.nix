@@ -12,18 +12,22 @@
     };
 
     taps = [
-      "DenzoNL/rdslink"
-      "cargo-lambda/tap"
+      {
+        name = "DenzoNL/rdslink";
+        trusted = true;
+      }
     ];
 
-    brews = [ "cargo-lambda" "go" "gpg" "kubetail" "llvm" "mingw-w64" "rdslink" ];
+    brews = [ "go" "gpg" "kubetail" "llvm" "mingw-w64" "rdslink" ];
 
     casks = [
       "1password-cli"
       "battle-net"
+      "chatgpt"
       "claude"
       "claude-code@latest"
       "curseforge"
+      "discord"
       "firefox"
       "font-caskaydia-cove-nerd-font"
       "gitkraken"

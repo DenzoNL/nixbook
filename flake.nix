@@ -32,6 +32,21 @@
         # Explicitly add myself to trusted-users to prevent warnings.
         nix.settings.trusted-users = [ "root" userName ];
 
+        # Weekly GC via nh: prunes system + user generations (keeping at least the
+        # last 5, and anything newer than 14 days), drops stale gcroots
+        # (.direnv, result links), then collects garbage. Runs as root.
+        launchd.daemons.nh-clean = {
+          command = "${pkgs.nh}/bin/nh clean all --keep 5 --keep-since 14d";
+          serviceConfig = {
+            StartCalendarInterval = [{ Weekday = 0; Hour = 3; Minute = 0; }];
+            StandardOutPath = "/var/log/nh-clean.log";
+            StandardErrorPath = "/var/log/nh-clean.log";
+          };
+        };
+
+        # Hardlink identical files in the store weekly.
+        nix.optimise.automatic = true;
+
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true; # default shell on catalina
         programs.fish.enable = true; # enable fish shell
