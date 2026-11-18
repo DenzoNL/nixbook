@@ -44,7 +44,7 @@
     maven
     nixd
     nixfmt
-    nodejs_22
+    nodejs_24
     pnpm
     ripgrep
     rustup

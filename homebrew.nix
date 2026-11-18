@@ -16,6 +16,11 @@
         name = "DenzoNL/rdslink";
         trusted = true;
       }
+      {
+        name = "ricardobroeders/convert";
+        clone_target = "https://github.com/Ricardobroeders/convert";
+        trusted = true;
+      }
     ];
 
     brews = [ "go" "gpg" "kubetail" "llvm" "mingw-w64" "rdslink" ];
@@ -26,6 +31,7 @@
       "chatgpt"
       "claude"
       "claude-code@latest"
+      "ricardobroeders/convert/convert"
       "curseforge"
       "discord"
       "firefox"
@@ -41,6 +47,7 @@
       "rectangle"
       "scroll-reverser"
       "signal"
+      "stablyai/orca/orca"
       "steam"
       "tailscale-app"
       "vlc"
